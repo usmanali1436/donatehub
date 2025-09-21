@@ -57,9 +57,9 @@ const CampaignDetail = () => {
     navigate(`/checkout?campaignId=${id}&amount=${donationAmount}`);
   };
 
-  const formatDonorName = (donor) => {
-    if (!donor) return 'Anonymous';
-    return donor.fullName || 'Anonymous Donor';
+  const formatDonorName = (donation) => {
+    if (!donation.donor) return 'Anonymous';
+    return donation.donor.fullName || 'Anonymous Donor';
   };
 
   if (isLoading) {
@@ -191,7 +191,7 @@ const CampaignDetail = () => {
                     </div>
                     <div>
                       <div className="font-medium text-gray-900">
-                        {formatDonorName(donation.donorId)}
+                        {formatDonorName(donation)}
                       </div>
                       <div className="text-sm text-gray-600">
                         {formatDateTime(donation.donatedAt)}

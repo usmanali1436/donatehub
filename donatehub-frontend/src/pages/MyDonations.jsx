@@ -14,7 +14,8 @@ const MyDonations = () => {
     currentPage: 1,
     totalPages: 1,
     totalDonations: 0,
-    hasMore: false,
+    hasNext: false,
+    hasPrev: false,
   });
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);

@@ -14,6 +14,7 @@ const CampaignCard = ({ campaign, showDonateButton = true, showEditButton = fals
     goalAmount,
     raisedAmount = 0,
     createdBy,
+    creator,
     status,
     createdAt
   } = campaign;
@@ -54,7 +55,7 @@ const CampaignCard = ({ campaign, showDonateButton = true, showEditButton = fals
         />
 
         <div className="flex justify-between text-sm text-gray-500">
-          <span>By {createdBy?.fullName || 'Anonymous'}</span>
+          <span>By {creator?.fullName || createdBy?.fullName || 'Anonymous'}</span>
           <span>{formatDate(createdAt)}</span>
         </div>
 

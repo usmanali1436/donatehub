@@ -12,7 +12,8 @@ const CampaignList = () => {
     currentPage: 1,
     totalPages: 1,
     totalCampaigns: 0,
-    hasMore: false,
+    hasNext: false,
+    hasPrev: false,
   });
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
@@ -77,7 +78,7 @@ const CampaignList = () => {
   }, []);
 
   const handleLoadMore = () => {
-    if (!isLoadingMore && pagination.hasMore) {
+    if (!isLoadingMore && pagination.hasNext) {
       fetchCampaigns(pagination.currentPage + 1, true);
     }
   };
@@ -162,7 +163,7 @@ const CampaignList = () => {
           </div>
 
           {/* Load More */}
-          {pagination.hasMore && (
+          {pagination.hasNext && (
             <div className="text-center">
               <Button
                 onClick={handleLoadMore}

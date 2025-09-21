@@ -13,4 +13,4 @@ connectDB().then(()=>{
     console.log("Database connection failed! || ", error);
 })
 
-module.exports = app;
+// module.exports = app;

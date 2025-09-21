@@ -93,8 +93,8 @@ const CampaignFilters = ({ onFiltersChange, filters: externalFilters }) => {
           >
             <option value="all">All Categories</option>
             {categories.map((cat) => (
-              <option key={cat.category} value={cat.category}>
-                {cat.category} ({cat.count})
+              <option key={cat.name} value={cat.name}>
+                {cat.name} ({cat.count})
               </option>
             ))}
           </select>
